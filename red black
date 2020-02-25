@@ -17,7 +17,6 @@ struct RBTreeNode
 	T _data;
 	Colour _col;
 };
-
 template<class K, class V>
 class RBTree
 {
