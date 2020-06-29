@@ -1,0 +1,27 @@
+笨方法：
+string str{ "aaccdd" };
+set<char> a;
+for (auto & it : str)
+{
+    a.insert(it);
+}
+str.clear();
+for (auto & it : a)
+{
+    str += it;
+}
+//结果acd
+
+库方法：
+#include <algorithm>
+//unique函数实现的只是相邻相同元素的去重，因此实现方式跟我们想象的去重函数不完全一样
+
+string str{ "aaccdd" };
+unique(str.begin(), str.end());
+cout << str << endl;
+//结果acd
+
+但是毕竟unique函数实现的只是相邻相同元素的去重，所以如果string str{ "aaccddaacc" }，那么结果就是acdac
+去重一般都伴随着排序
+
+
